@@ -1,0 +1,50 @@
+<html ng-app="museumApp">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Museum App</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-controller="MainController as mainCtrl">
+	<div id="body-wrap">
+		<h1>Museum App</h1>
+
+		<h3>ALL MUSEUMS</h3>
+			<div id="museum-container" ng-repeat="museum in mainCtrl.museumList">
+				<div ng-if="mainCtrl.editMuseumEnabled == false || mainCtrl.editingMuseum._id != museum._id">
+				<h4>{{museum.name}}</h4>
+	      <img src="{{museum.img}}">
+	      <p id="address">{{museum.address}}</p>
+				<p>{{museum.history}}</p>
+				<a id="button" ng-click="mainCtrl.editMuseum(museum)">Edit</a>		
+				<a id="button" ng-click="mainCtrl.deleteMuseum(museum)">Delete</a>		
+				<br/><br/>
+				</div>
+
+				<div id="edit-container" ng-if="mainCtrl.editMuseumEnabled == true && mainCtrl.editingMuseum._id == museum._id">
+					<input ng-model="museum.name"><br/>
+					<input ng-model="museum.address"><br/>
+					<input ng-model="museum.img"><br/>
+					<textarea type="text" ng-model="museum.history"></textarea><br/>
+					<a id="button" ng-click="mainCtrl.updateMuseum(museum)">Save</a>		
+				</div>
+			</div>		
+
+			<div id="museumform">
+			<h3 id="addtitle">Add A Museum</h3>
+			<form ng-submit="mainCtrl.addMuseums()">
+				<input type="text" ng-model="mainCtrl.museumdata.name" placeholder="Name"><br/>
+				<input type="text" ng-model="mainCtrl.museumdata.address" placeholder="Address"><br/>
+				<input type="text" ng-model="mainCtrl.museumdata.img" placeholder="Image URL"><br/>
+				<textarea type="text" ng-model="mainCtrl.museumdata.history" placeholder="History"></textarea><br/>
+				<input id="submit" type="submit">
+			</form>
+		</div>
+
+	</div>
+</body>
+</html>

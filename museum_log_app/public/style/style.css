@@ -1,0 +1,83 @@
+
+body{
+	margin: 0 auto;
+	width: 800px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	background: url('http://cfaes.osu.edu/brand/sites/ctbrand/files/site-library/site-documents/art/backgrounds/osu/buckeye_leaf_diamond_graywhite.jpg');
+}
+
+#body-wrap{
+	text-align: center;
+
+}
+
+h1{
+	font-size: 85px;
+	padding: 10px;
+}
+
+h3{
+	font-size: 45px;
+	background: white;
+
+}
+
+h4{
+	font-size: 30px;
+	margin-bottom: 10px;
+	margin-top: 75px;
+	text-decoration: overline;
+}
+
+img{
+  width: 770px;
+  height: 544px;
+}
+
+#address{
+	font-family: "Courier New", Courier, monospace;
+	padding-bottom: 2px;
+	background: white;
+
+}
+
+p{
+	padding-bottom: 25px;
+	background: white;
+
+}
+
+#button{
+	margin-top: 10px;
+	border:5px solid black; 
+	cursor:pointer; 
+	padding:10px
+}
+
+input{
+	margin: 5px;
+	padding: 5px;
+	width: 350px;
+	height: 40px;
+}
+
+textarea{
+	margin: 10px;
+	width: 350px;
+	height: 140px;
+}
+
+#addtitle{
+	margin-top: 100px;
+	text-decoration: overline;
+}
+
+#submit{
+	background-color: black;
+	color: white;
+}
+
+
+
+
